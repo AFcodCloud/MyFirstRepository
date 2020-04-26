@@ -43,18 +43,7 @@ const mapStateToProps=(state)=>{
     followingBlock:selectFollowingBlock(state)
   }
 }
-/* const mapStateToProps=(state)=>{
-  return{
-    users:state.usersPage.users,
-    pageSize:state.usersPage.pageSize,
-    totalUsersCount:state.usersPage.totalUsersCount,
-    currentPage:state.usersPage.currentPage,
-    isFetching:state.usersPage.isFetching,
-    followingBlock:state.usersPage.followingBlock
-  }
-} */
 
-//const UsersContainer = withAuthRedirectHOC(connect(mapStateToProps, {getUsers, follow, unFollow})(Users))
 
 
 export default compose(withAuthRedirectHOC, connect(mapStateToProps, {getUsers, follow, unFollow}))(Users)
