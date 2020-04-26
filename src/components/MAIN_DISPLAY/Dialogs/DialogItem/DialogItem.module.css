@@ -1,0 +1,17 @@
+
+
+.dialogs .dialogsItem .dialog {
+  padding: 1px;
+}
+
+
+.navLink{
+  padding: 3px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: black;
+}
+.activeNavLink{
+  color:gold;
+  background: blueviolet;
+}

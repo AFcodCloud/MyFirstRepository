@@ -1,0 +1,19 @@
+
+.nav {
+  grid-area: n;
+  background: rgb(0,6,36);
+background: linear-gradient(180deg, rgba(0,6,36,1) 0%, rgba(9,75,121,1) 31%, rgba(0,104,255,1) 62%);
+  padding: 20px;
+}
+.item>a{
+  color:white;
+  text-decoration: none;
+}
+.item>a.active{
+  color:gold;
+}
+
+.siteBar{
+  margin:50px auto;
+  color:white;
+}

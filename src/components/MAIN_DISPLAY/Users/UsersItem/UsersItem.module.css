@@ -1,0 +1,55 @@
+.usersItem{
+    position: relative;
+    width: 150px;
+    height: 200px;
+    background-color:#528af1e8;
+    border-radius: 5px;
+    margin: 5px;
+    overflow: hidden;
+}
+
+
+.fullName{
+    position: relative;
+    bottom: 0;
+    left: 5px;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    color:white;
+}
+
+.status{
+    position: relative;
+    left: 5px;
+    font-size: 10px;
+    color:white;
+}
+
+
+.fallow{
+    position: absolute;
+    top:0;
+    left: 0;
+    color:white;
+    font-size: 12px;
+    background-color:#104099a1;
+    border:0;
+    border-radius: 2px;
+}
+
+
+.itemsContainer{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.selectedPage{
+    font-weight: bold;
+}
+.pagesNav{
+    display: flex;
+    justify-content: space-around;
+    color:#104099;
+}

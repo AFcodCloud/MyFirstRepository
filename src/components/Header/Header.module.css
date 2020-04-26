@@ -1,0 +1,26 @@
+.header {
+  grid-area: h;
+  background: rgb(0,6,36);
+  background: linear-gradient(82deg, rgba(0,6,36,1) 27%, rgba(0,104,255,1) 59%, rgba(9,75,121,1) 87%);
+}
+.header>img{
+  width: 20px;
+  
+}
+
+.authUser{
+    margin-right: 80px;
+    float: right;
+    color:white;
+    width: 50px;
+    height: 50px;
+}
+
+.logOut{
+  color: white;
+  background-color: rgb(35, 156, 255);
+  border: 0;
+  border-radius: 5px;
+  width: 100px;
+  height: 20px;
+}

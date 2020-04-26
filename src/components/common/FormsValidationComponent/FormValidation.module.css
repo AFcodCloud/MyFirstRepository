@@ -1,0 +1,26 @@
+.container{
+  position: relative;
+}
+
+.textarea {
+  width: 300px;
+  height: 50px;
+  border: 1px solid rgba(222, 229, 243, 0.822);
+  box-shadow: 3px 4px 21px -6px rgba(0, 0, 0, 0.75);
+}
+h2 {
+  color: rgb(70, 67, 67);
+}
+
+.errorMessage{
+  position: absolute;
+  top:-25px;
+  left: 0;
+  background-color: burlywood;
+  border-radius: 5px;
+  padding: 3px;
+}
+
+.errorBorder{
+  border: 2px solid red;
+}

@@ -1,0 +1,17 @@
+.item{
+  position: relative;
+  display: block;
+  width: 150px;
+  left: 250px;
+  align-items: center;
+}
+
+
+.postMessage{
+padding: 1px;
+}
+.likes{
+  color:red;
+  font-size: 10px;
+  font-weight: bold;
+}

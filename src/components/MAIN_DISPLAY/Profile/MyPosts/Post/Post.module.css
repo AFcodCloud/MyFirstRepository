@@ -1,0 +1,30 @@
+.item{
+  display: grid;
+  width: 300px;
+  margin-bottom: 30px;
+  margin-left: 30px;
+  padding: 5px;
+  grid-template-columns: 60px 250px;
+  align-items: center;
+  background-color: rgba(201, 202, 212, 0.8);
+  border-radius: 5px;
+  box-shadow:2px 4px 12px 3px rgba(0,0,0,0.4);
+}
+
+.postIMG > img {
+  width: 50px;
+  border-radius: 50%;
+}
+
+.postMessage{
+padding: 1px;
+}
+.likes{
+  color:red;
+  font-size: 10px;
+  font-weight: bold;
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 2;
+}
