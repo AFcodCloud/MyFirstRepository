@@ -1,10 +1,10 @@
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-//https://habr.com/ru/company/ruvds/blog/445276/    //статья по хукам
+
 const ProfileStatus =(props)=> {
 
- let [editMode, setEditMode] = useState(false) //хук возвращает массив из 2х элементов первый содержит значение переданное функции, а второй колбек функция для изменения этого значения
+ let [editMode, setEditMode] = useState(false)
  let [status, setStatus] = useState(props.status)
  
  let deactivateEditMode=()=>{
@@ -36,7 +36,6 @@ const ProfileStatus =(props)=> {
     </div>
     )
   }
-
 
 export default ProfileStatus;
 

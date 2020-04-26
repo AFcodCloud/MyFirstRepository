@@ -25,7 +25,7 @@ export let setAuthUserData = (userId, email, login, isAuth) => {
 
 export const getAuthUserData=()=>{
   return (dispatch)=>{
-    return authAPI.getAuth() //ретурнули еще один промис для initializeAPP чтобы там через then узнать о завершении асинхронной операции 
+    return authAPI.getAuth() //вернули еще один промис для initializeAPP чтобы там через then узнать о завершении асинхронной операции 
       .then(response => {
         if(response.resultCode===0){
           let {id, email, login }=response.data;

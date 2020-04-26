@@ -20,6 +20,7 @@
 padding: 1px;
 }
 .likes{
+  cursor: pointer;
   color:red;
   font-size: 10px;
   font-weight: bold;

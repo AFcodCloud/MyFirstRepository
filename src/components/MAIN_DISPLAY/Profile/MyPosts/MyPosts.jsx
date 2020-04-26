@@ -41,32 +41,3 @@ let AddPostReduxForm=reduxForm({form:"posts"})(AddPostForm)
 
 
 export default MyPosts;
-
-
-
-
-
-
-
-
-
-
-
-{/* <div>
-        <div>
-          <textarea
-            className={s.textarea}
-            ref={textElement}
-            onChange={onPostChange}
-            value={props.profilePage.newPostText}
-          />
-        </div>
-        <div>
-          <button
-            className={s.button}
-            onClick={addPost}
-          >
-            Add post
-          </button>
-        </div>
-      </div> */}

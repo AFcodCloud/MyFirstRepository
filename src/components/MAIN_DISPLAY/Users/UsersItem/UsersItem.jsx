@@ -73,28 +73,3 @@ const ibg={
 
 
 export default UsersItem;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{/* <div className={s.locations}>
-<div className={s.city}>
-  {u.location != undefined ? u.location.city : "unknown"}
-</div>
-<div className={s.country}>
-  {u.location != undefined ? u.location.country : "unknown"}
-</div>
-</div> */}

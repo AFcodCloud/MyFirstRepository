@@ -29,5 +29,5 @@ let mapStateToProps=(state)=>( {profile: selectProfile(state),
                                 status:selectStatus(state),
                                 userId:selectUserId(state)})
 
-//export default withAuthRedirectHOC(connect (mapStateToProps, {getUserProfile}) (withRouter(ProfileContainer)));
+
 export default compose(withAuthRedirectHOC, connect (mapStateToProps, {getUserProfile,getProfileStatus,getUpdateStatus}),withRouter)(ProfileContainer)
