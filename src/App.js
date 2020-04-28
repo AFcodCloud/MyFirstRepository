@@ -5,6 +5,7 @@ import NavBar from "./components/NavBar/NavBar";
 import ProfileContainer from "./components/MAIN_DISPLAY/Profile/ProfileContainer";
 import DialogsContainer from "./components/MAIN_DISPLAY/Dialogs/DialogsContainer.jsx";
 import UsersContainer from "./components/MAIN_DISPLAY/Users/UsersContainer.jsx"
+import Friends from "./components/MAIN_DISPLAY/Friends/Friends.jsx"
 import {Route, withRouter} from "react-router-dom";
 import Login from "./components/MAIN_DISPLAY/Login/Login";
 import SettingsContainer from "./components/MAIN_DISPLAY/Settings/SettingsContainer";
@@ -26,6 +27,7 @@ class App extends React.Component {
         <NavBar />
         <div className="app-wrapper-content">
           <Route path='/profile/:userId?' render={()=><ProfileContainer />} />
+          <Route path='/friends' render={()=><Friends />} />
           <Route path='/users' render={()=><UsersContainer />} />
           <Route path='/dialogs'render={()=><DialogsContainer />} />
           <Route path='/music' render={()=><MusicContainer />} />

@@ -14,6 +14,10 @@ const profileReducer = (state=initialState, action) =>{
           likesCount:0};
          return {...state, 
                   psd:[...state.psd, newPost]}
+  case "DELETE_POST": 
+                   return {...state, 
+                            psd:[...state.psd.filter(p=>p.id!=action.postId)]}  
+        
         case "ADD_LIKE":
         return {...state,
                 psd:[...state.psd.map(p=>{
@@ -43,9 +47,11 @@ export let setUserStatus=(status)=>{
   return{type:"SET_USER_STATUS", status}
 } 
 
-
 export let addPost =(textPost)=>{
   return{type:"ADD_POST", textPost}
+}
+export let deletePost =(postId)=>{
+  return{type:"DELETE_POST", postId}
 }
 export let addLike =(like)=>{
   return{type:"ADD_LIKE", like}

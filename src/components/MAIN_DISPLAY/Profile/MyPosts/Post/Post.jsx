@@ -16,6 +16,7 @@ const Post = props => {
       {props.message}
       </div>
       <div onClick={(e)=>{props.addLike(props.id)}} className={s.likes}>likes {props.likesCount}</div>
+      <div onClick={(e)=>{props.deletePost(props.id)}}>X</div>
     </div> 
   );
 };
