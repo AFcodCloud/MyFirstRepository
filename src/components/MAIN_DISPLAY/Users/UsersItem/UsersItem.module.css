@@ -36,20 +36,3 @@
     border:0;
     border-radius: 2px;
 }
-
-
-.itemsContainer{
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-wrap: wrap;
-
-}
-.selectedPage{
-    font-weight: bold;
-}
-.pagesNav{
-    display: flex;
-    justify-content: space-around;
-    color:#104099;
-}

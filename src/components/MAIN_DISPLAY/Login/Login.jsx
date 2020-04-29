@@ -4,7 +4,7 @@ import s from "./Login.module.css"
 import { connect } from 'react-redux'
 import {getAutorizeUser} from "../../../redux/authReducer"
 import {Input} from "../../common/FormsValidationComponent/FormValidation.jsx"
-import {requared, maxLengthCreator, emailValidator} from "../../../validators/validators.js"
+import {requared, maxLengthCreator, emailValidator} from "../../../utils/validators/validators.js"
 import { Redirect } from 'react-router-dom'
 
 let Login=(props)=>{

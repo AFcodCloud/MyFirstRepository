@@ -1,0 +1,10 @@
+
+.selectedPage{
+    font-weight: bold;
+}
+.pagesNav{
+    cursor: pointer;
+    display: flex;
+    justify-content: space-around;
+    color:#104099;
+}

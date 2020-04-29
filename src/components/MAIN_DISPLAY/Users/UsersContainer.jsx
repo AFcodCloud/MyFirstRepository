@@ -5,7 +5,7 @@ import {selectPageSize, selectUsers, selectTotalUsersCount, selectCurrentPage, s
 import { follow, getUsers, unFollow } from "../../../redux/usersReducer";
 import Preloader from "../../common/Preloaders/Preloader";
 import withAuthRedirectHOC from "../../HOC/AuthRedirectHOC";
-import UsersItem from "./UsersItem/UsersItem.jsx";
+import UsersList from "./UsersList";
 
 
 
@@ -20,7 +20,7 @@ class  Users extends React.Component  {
   render(){
      return <>
        {this.props.isFetching?<Preloader/>:null}
-     <UsersItem totalUsersCount={this.props.totalUsersCount}
+      <UsersList totalUsersCount={this.props.totalUsersCount}
                 pageSize={this.props.pageSize}
                 currentPage={this.props.currentPage}
                 onPageChanged={this.onPageChanged}

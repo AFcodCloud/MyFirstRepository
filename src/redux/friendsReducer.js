@@ -1,14 +1,19 @@
 import {userAPI} from "../api/api"
 
 let initialState = {
-  users: [],
-  pageSize:100,
-  totalUsersCount:0,
-  currentPage:1,
-  isFetching:false,
-  followingBlock:[]
+  users: [    {
+    name: "takeThisLol",
+    id: 7596,
+    uniqueUrlName: null,
+    photos: {
+      small: null,
+      large: null
+    },
+    "status": "hello world",
+    "followed": false
+  }],
 };
-const usersReducer = (state = initialState, action) => {
+const friendsReducer = (state = initialState, action) => {
   switch (action.type) {
     case "FOLLOW":
       return {
@@ -33,7 +38,7 @@ export let followSucces = userId => {
 };
 
 ///thunks
-export const getFriends = (userId)=>{
+/* export const getFriends = (userId)=>{
   return (dispatch)=>{
         userAPI.unFollow(userId)
         .then(response=>{
@@ -41,7 +46,7 @@ export const getFriends = (userId)=>{
             dispatch(unFollowSucces(userId))}
             dispatch(toggleBlockFollowing(false, userId))}
         )}
-}
+} */
 
 
 /* /users?term=takeThisLol */

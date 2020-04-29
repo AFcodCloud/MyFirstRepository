@@ -3,8 +3,8 @@ import s from "./ProfileInfo.module.css";
 import Preloader from "../../../common/Preloaders/Preloader"
 import ProfileStatus from "./ProfileStatus.jsx"
 
-const ProfileInfo = (props) => {
-  if (!props.profile){
+const ProfileInfo = ({getUpdateStatus, profile, status}) => {
+  if (!profile){
     return (<Preloader/>)
   }
   return (
@@ -17,17 +17,17 @@ const ProfileInfo = (props) => {
       </div>
       <div className={s.descriptionBlock}>
           <div className={s.ava}> <img
-          src={props.profile.photos.large ? props.profile.photos.large : "https://static.thenounproject.com/png/404950-200.png"}
+          src={profile.photos.large ? profile.photos.large : "https://static.thenounproject.com/png/404950-200.png"}
         alt="Ava"/> 
         </div> 
           <div className={s.description}>
-            <li>{props.profile.fullName}</li>
-            <li>{props.profile.aboutMe}</li>
-            <li>{props.profile.lookingForAJobDescription}</li>
-            <li>{props.profile.lookingForAJob ? "ищу работу" : "уже работаю"}</li>
+            <li>{profile.fullName}</li>
+            <li>{profile.aboutMe}</li>
+            <li>{profile.lookingForAJobDescription}</li>
+            <li>{profile.lookingForAJob ? "ищу работу" : "уже работаю"}</li>
           </div>
       </div>
-       <ProfileStatus getUpdateStatus={props.getUpdateStatus} status={props.status} />
+       <ProfileStatus getUpdateStatus={getUpdateStatus} externalStatus={status} />
     </div>
   );
 };

@@ -2,19 +2,19 @@ import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 
-const ProfileStatus =(props)=> {
+const ProfileStatus =({getUpdateStatus, externalStatus})=> {
 
  let [editMode, setEditMode] = useState(false)
- let [status, setStatus] = useState(props.status)
+ let [status, setStatus] = useState(externalStatus)
  
  let deactivateEditMode=()=>{
     setEditMode()
-    if(props.status!==status){
-    props.getUpdateStatus(status)
+    if(externalStatus!==status){
+    getUpdateStatus(status)
     }
  }
  useEffect(()=>{
-   setStatus(props.status)},[props.status])
+   setStatus(externalStatus)},[externalStatus])
 
  let onChangeStatus=(e)=>{
     setStatus(e.currentTarget.value)
@@ -25,7 +25,7 @@ const ProfileStatus =(props)=> {
     <div>
       {!editMode &&
       <div>
-        <span onDoubleClick={setEditMode}>{props.status||"..."}</span>
+        <span onDoubleClick={setEditMode}>{externalStatus||"..."}</span>
       </div>
   }
       {editMode &&
