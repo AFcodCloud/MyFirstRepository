@@ -27,7 +27,7 @@ const ProfileInfo = ({getUpdateStatus, profile, status}) => {
             <li>{profile.lookingForAJob ? "ищу работу" : "уже работаю"}</li>
           </div>
       </div>
-       <ProfileStatus getUpdateStatus={getUpdateStatus} externalStatus={status} />
+       <ProfileStatus getUpdateStatus={getUpdateStatus}  status={status}/* externalStatus={status} */ />
     </div>
   );
 };
