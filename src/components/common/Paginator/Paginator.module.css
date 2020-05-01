@@ -1,4 +1,12 @@
+.container{
+    display: flex;  
+    width: 300px;
 
+}
+.page{
+    margin: 0 2px 0 2px;
+    width: 20px;
+}
 .selectedPage{
     font-weight: bold;
 }
@@ -7,4 +15,12 @@
     display: flex;
     justify-content: space-around;
     color:#104099;
+}
+
+.nav{
+    color:#fff;
+    font-weight: bold;
+    border: 0;
+    border-radius: 3px;
+    background-color: #104099;
 }

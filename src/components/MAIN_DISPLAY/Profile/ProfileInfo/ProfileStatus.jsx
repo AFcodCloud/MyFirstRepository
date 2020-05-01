@@ -47,7 +47,7 @@ class ProfileStatus extends React.Component {
 export default ProfileStatus; 
 
 /* 
-const ProfileStatus =({getUpdateStatus, externalStatus})=> {
+const ProfileStatus =({getUpdateStatus, externalStatus})=> { //заменить в ProfileInfo пропсы status
 
  let [editMode, setEditMode] = useState(false)
  let [status, setStatus] = useState(externalStatus)
