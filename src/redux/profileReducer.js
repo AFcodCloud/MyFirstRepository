@@ -34,6 +34,8 @@ const profileReducer = (state=initialState, action) =>{
         return {...state, profile:action.profile}
         case "SET_USER_STATUS":
         return {...state, status:action.status}
+        case "SAVE_PHOTO_SUCCES":
+          return {...state, profile:{...state.profile, photos:action.photos}}
       default:
       return state;}
 }
@@ -56,7 +58,9 @@ export let deletePost =(postId)=>{
 export let addLike =(like)=>{
   return{type:"ADD_LIKE", like}
 }
-
+export let savePhotoSuccess =(photos)=>{
+  return{type:"SAVE_PHOTO_SUCCES", photos}
+}
 
 
 
@@ -72,12 +76,17 @@ export const getProfileStatus=(userId)=>async(dispatch)=>{
   let response = await profileAPI.getStatus(userId)  
     dispatch(setUserStatus(response))}
 
-  export const getUpdateStatus=(status)=>async (dispatch)=>{
+export const getUpdateStatus=(status)=>async (dispatch)=>{
    let response = await profileAPI.updateStatus(status)
       if(response.resultCode===0){
       dispatch(setUserStatus(status))}
     }
 
+    export const savePhoto=(file)=>async (dispatch)=>{
+      let response = await profileAPI.savePhoto(file)
+         if(response.resultCode===0){
+         dispatch(savePhotoSuccess(response.data.photos))}
+       }
 
 export default profileReducer;
 

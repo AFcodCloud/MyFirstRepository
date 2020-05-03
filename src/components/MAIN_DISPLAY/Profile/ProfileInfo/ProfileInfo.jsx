@@ -3,7 +3,11 @@ import s from "./ProfileInfo.module.css";
 import Preloader from "../../../common/Preloaders/Preloader"
 import ProfileStatus from "./ProfileStatus.jsx"
 
-const ProfileInfo = ({getUpdateStatus, profile, status}) => {
+const ProfileInfo = ({getUpdateStatus, profile, status, isOwner,savePhoto}) => {
+ const onMainPhotoSelected = (e)=>{
+  if(e.target.files.length){
+    savePhoto(e.target.files[0])}
+ }
   if (!profile){
     return (<Preloader/>)
   }
@@ -27,6 +31,7 @@ const ProfileInfo = ({getUpdateStatus, profile, status}) => {
             <li>{profile.lookingForAJob ? "ищу работу" : "уже работаю"}</li>
           </div>
       </div>
+       {isOwner&&<input type={"file"} onChange={onMainPhotoSelected}/>}
        <ProfileStatus getUpdateStatus={getUpdateStatus}  status={status}/* externalStatus={status} */ />
     </div>
   );
