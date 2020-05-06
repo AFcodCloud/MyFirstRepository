@@ -66,6 +66,14 @@ export const authAPI = {
         .then(response => response.data)}
     
 }
+export const securityAPI = {
+
+   getCaptchaUrl(){
+ return instance.get(`security/get-captcha-url`)
+ .then(response => response.data)},
+
+ 
+}
 
 /* savePhoto(photoFile){
    let formData= new FormData();

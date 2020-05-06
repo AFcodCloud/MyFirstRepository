@@ -17,16 +17,16 @@ let Login=(props)=>{
     return(
         <>
         <h1>login</h1>
-        <LoginReduxForm onSubmit={onSubmit}/>
+        <LoginReduxForm onSubmit={onSubmit} captcha={props.captcha}/>
         </>
     )
 }
 
 let maxLength = maxLengthCreator(25)
 
-let LoginForm=(props)=>{
+let LoginForm=({handleSubmit, error, captcha})=>{
     return(
-    <form className={s.form} onSubmit={props.handleSubmit}>
+    <form className={s.form} onSubmit={handleSubmit}>
         <div>
         <Field placeholder={"Login"} name={"email"} validate={[requared, emailValidator]} component={Input}/>  
         </div>
@@ -36,7 +36,12 @@ let LoginForm=(props)=>{
         <div>
         <Field type={"checkbox"} name={"rememberMe"}  component={Input}/>Remember me  
         </div>
-        {props.error&&<div className={s.responseError}>{props.error}</div>}
+        {captcha && <img src={captcha}/>}
+        {captcha &&  <Field placeholder={"Symbols from image"} 
+                            name={"captcha"} 
+                            validate={[requared]}
+                            component={Input}/> }
+        {error&&<div className={s.responseError}>{error}</div>}
         <div>
         <button>Log in</button>  
         </div>
@@ -47,7 +52,8 @@ const LoginReduxForm=reduxForm({form:"login"})(LoginForm)
 
 let mapStateToProps=(state)=>{
     return{
-        isAuth:state.auth.isAuth
+        isAuth:state.auth.isAuth,
+        captcha:state.auth.captcha
     }
 }
 
