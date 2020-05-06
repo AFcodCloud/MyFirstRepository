@@ -1,4 +1,5 @@
 import {profileAPI} from '../api/api.js' 
+import { stopSubmit } from 'redux-form';
 
 let initialState={
   psd : [{ id: 1, message: "It's my first post!", likesCount: 0 }],
@@ -64,6 +65,7 @@ export let savePhotoSuccess =(photos)=>{
 
 
 
+
 //thunks
 export const getUserProfile=(userId)=>{
   return (dispatch)=>{
@@ -87,6 +89,27 @@ export const getUpdateStatus=(status)=>async (dispatch)=>{
          if(response.resultCode===0){
          dispatch(savePhotoSuccess(response.data.photos))}
        }
+
+    export const saveProfile=(profileData)=>async (dispatch, getState)=>{
+      const userId= getState().auth.userId
+      const response = await profileAPI.saveProfile(profileData)
+       if(response.resultCode===0){
+         dispatch(getUserProfile(userId))}
+         else {
+          let wrongNetwork = response.messages[0]
+            .slice(
+              response.messages[0].indexOf(">") + 1,
+              response.messages[0].indexOf(")")
+            )
+            .toLocaleLowerCase();
+          dispatch(
+            stopSubmit("editProfile", {
+              contacts: { [wrongNetwork]: response.messages[0] }
+            })
+          );
+          return Promise.reject(response.messages[0]);
+        }
+         }
 
 export default profileReducer;
 

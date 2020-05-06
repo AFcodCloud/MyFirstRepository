@@ -42,12 +42,12 @@ export const profileAPI = {
    savePhoto(photoFile){
      let formData= new FormData();
      formData.append("image", photoFile);
-      return instance.put(`profile/photo`, formData, {
-        headers:{
-        'Content-Type':'multipart/form-data'
-        }
-      })
-      .then(response=>response.data)}
+      return instance.put(`profile/photo`, formData)
+      .then(response=>response.data)},
+
+   saveProfile(profileData){
+          return instance.put(`profile/`, profileData)
+          .then(response=>response.data)}
 }
 
 
@@ -64,5 +64,15 @@ export const authAPI = {
     getLogOut(){
         return instance.delete(`auth/login`)
         .then(response => response.data)}
-
+    
 }
+
+/* savePhoto(photoFile){
+   let formData= new FormData();
+   formData.append("image", photoFile);
+    return instance.put(`profile/photo`, formData, {
+      headers:{ //можно не отправлять 
+      'Content-Type':'multipart/form-data' //так как эта строка формируется автоматически конструктором FormData()
+      }
+    })
+    .then(response=>response.data)} */

@@ -14,8 +14,9 @@ h2 {
 
 .errorMessage{
   position: absolute;
-  top:-25px;
+  top: 0;
   left: 0;
+  transform: translateY(-100%);
   background-color: burlywood;
   border-radius: 5px;
   padding: 3px;
